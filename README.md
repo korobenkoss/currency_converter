@@ -1,3 +1,3 @@
 # Currency converter
 ## Run the app
- `npm start`
+ `npm install && npm start`
