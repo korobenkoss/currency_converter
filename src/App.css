@@ -29,6 +29,23 @@ body {
   align-items: center;
 }
 
+.Currencies {
+  display: flex;
+  flex-direction: row;
+}
+
+.Info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: .5em;
+}
+
+.CurrencyInfo {
+  padding: .3em;
+}
+
 .Converter {
   display: flex;
   flex-direction: column;

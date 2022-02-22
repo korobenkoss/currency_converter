@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from "react";
 import CurrencyRow from "./CurrencyRow";
+import UAHInfo from "./UAHInfo";
+import USDInfo from "./USDInfo";
 
 export default function Converter() {
     const BASE_URL = 'http://api.exchangeratesapi.io/latest'
@@ -54,23 +56,33 @@ export default function Converter() {
     }
     
     return (
-      <div className="Converter">
-        {/* <h1>Today's rates:</h1> */}
-        <CurrencyRow
-          currencyOptions={currencyOptions}
-          selectCurrency={fromCurrency}
-          onChangeCurrency={ e => setFromCurrency(e.target.value) }
-          amount={fromAmount}
-          onChangeAmount={handleFromAmountChange}
-          />
-        {/* <div className='equals'>=</div> */}
-        <CurrencyRow
-          currencyOptions={currencyOptions}
-          selectCurrency={toCurrency}
-          onChangeCurrency={ e => setToCurrency(e.target.value) }
-          amount={toAmount}
-          onChangeAmount={handleToAmountChange}
-        />
+      <div className="Currencies">
+        <div className="Info">
+          <UAHInfo />
+          <USDInfo />
+        </div>
+
+        <div className="Converter">
+          {/* <h1>Today's rates:</h1> */}
+          <div className="convert">
+            <CurrencyRow
+              currencyOptions={currencyOptions}
+              selectCurrency={fromCurrency}
+              onChangeCurrency={ e => setFromCurrency(e.target.value) }
+              amount={fromAmount}
+              onChangeAmount={handleFromAmountChange}
+              />
+            {/* <div className='equals'>=</div> */}
+            <CurrencyRow
+              currencyOptions={currencyOptions}
+              selectCurrency={toCurrency}
+              onChangeCurrency={ e => setToCurrency(e.target.value) }
+              amount={toAmount}
+              onChangeAmount={handleToAmountChange}
+            />
+
+          </div>
+        </div>
       </div>
       );
   }
